@@ -170,7 +170,7 @@ class MsgConnect
             $emailAnalyser =  new EmailAnalyser($email, $user, $messageId);
             $emailAnalyser->analyse();
             $emailToTreat = $emailAnalyser->emailIn;
-            $specificEmails = ['contact@menuiserie-cofim.com', 'c.petrequin@menuiserie-cofim.com'];
+            $specificEmails = ['contact@menuiserie-cofim.com', 'z.hadjdjilani@menuiserie-cofim.com'];
 
             if (in_array($user->email, $specificEmails)) {
                 \Log::info("**********EMAIL SPÉCIFIQUE*************");
@@ -310,7 +310,7 @@ class MsgConnect
             // Update the email
             $this->guzzle('patch', "users/{$user->ms_id}/messages/{$messageId}", $updateData);
 
-            $specificEmails = ['contact@menuiserie-cofim.com', 'c.petrequin@menuiserie-cofim.com'];
+            $specificEmails = ['contact@menuiserie-cofim.com', 'z.hadjdjilani@menuiserie-cofim.com'];
 
             if (in_array($user->email, $specificEmails)) {
                 \Log::info("**********EMAIL SPÉCIFIQUE*************");

@@ -15,7 +15,7 @@ class MsgEmailNotification extends Controller
         // \Log::info('Request has validation data:');
         // \Log::info($request->has('validationToken'));
 
-        // Check if the request contains a validation token
+        // Check if the request contains a validation token dans ce cas c est une validation d'abonemment
         if ($request->has('validationToken')) {
             //\Log::info('Validation token received:');
             //\Log::info($request->input('validationToken'));
