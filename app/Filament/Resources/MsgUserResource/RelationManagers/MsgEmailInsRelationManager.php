@@ -72,6 +72,8 @@ class MsgEmailInsRelationManager extends RelationManager
                 Tables\Columns\IconColumn::make('is_from_commercial')->label('Depuis ADV/COM')->boolean(),
                 Tables\Columns\TextColumn::make('created_at')->label('Crée le')->dateTime()->timezone('Europe/Paris')->sortable(),
             ])
+            ->defaultPaginationPageOption(25)
+            ->paginated([10, 25, 50, 100])
             ->defaultSort('created_at', 'desc')
             ->filters([
                 Filter::make('is_from_commercial')->label('Depuis ADV/COM')->toggle()->query(fn (Builder $query): Builder => $query->where('is_from_commercial', true)),

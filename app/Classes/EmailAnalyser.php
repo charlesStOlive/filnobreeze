@@ -238,6 +238,7 @@ class EmailAnalyser
         $body = strip_tags($body, '<p><br>');
 
         // Remplacer les caractères spéciaux et invisibles comme &nbsp;
+        $body = str_replace('&nbsp;', ' ', $body); // Convertir &nbsp; en espace
         $body = html_entity_decode($body); // Convertit les entités HTML comme &nbsp; en caractères normaux
         $body = preg_replace('/\s+/', ' ', $body); // Remplacer les espaces multiples par un seul espace
 
